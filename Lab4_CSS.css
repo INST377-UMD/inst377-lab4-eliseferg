@@ -1,0 +1,14 @@
+.section {
+    float: left;
+    margin: 0;
+    background-color: #985396;
+    color: #391242;
+    border: 2px solid black;
+    margin: 10px;
+    margin-bottom: 5px;
+    padding: 5px;
+    float: left;
+    clear: left;
+    width:90%;
+}
+

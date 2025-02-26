@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title> Elise Ferguson Lab 4</title>
+        <link rel="stylesheet" href="Lab4_CSS.css">
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header id="bar">
+            <h1> INST377 - Lab 4 </h1>
+         </header>
+
+        <!-- Alert Me -->
+        <div class="section" id="alertSection">
+            <form name="nameForm">
+                <label for="name"> Name: </label>
+                <input type="text" id="name" required>
+                <br>
+                <button onclick="activateAlert()"> Alert Me!</button>
+            </form>
+        </div>
+
+        <!-- Change Color-->
+         <div class="section" id="changeColorSection">
+            <button onclick="changeColor()">Change Color</button>
+            <br>
+         </div>
+         <br>
+
+         <!-- Text Tester -->
+          <div class="section" id="textTesterSection">
+            <form name="textForm">
+            <label for="textInput"> Text Tester:</label>
+            <input type="text" id="textInput" required>
+            <br>
+            <button onclick="formValidation()"> Validate Text</button>   
+            </form>
+          </div>
+
+          <!-- Add Text-->
+           <div class="section" id="addTextSection">
+            `<button onclick="addText()">Add Text</button>
+           </div>
+
+        <!-- Javascript Code -->
+
+        <!-- Alert Me Function-->
+        <script type="text/javascript">
+        function activateAlert() {
+            const name = document.nameForm.name.value;
+            alert('Hi ' + name + '!');
+            return false;
+
+            console.log('Successfully activated alert button!')
+        }
+
+         // Change Color Function
+
+         currentColor = 'pink'; // Initial color
+
+        function changeColor() {
+            if (currentColor === 'pink') {
+                document.body.style.backgroundColor = 'purple';
+                currentColor = 'purple';
+            } else {
+                document.body.style.backgroundColor = 'pink';
+                currentColor = 'pink';
+            }
+        }
+
+        //Text Tester Function
+        function formValidation() {
+            const textInput = document.textForm.textInput.value;
+            const validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+
+            if (validation.test(textInput)) {
+                alert('How about... nah');
+                return false;
+            }
+        }
+
+        //Add Text Function
+        function addText() {
+            const heading = document.getElementById('bar');
+            heading.innerText += ' Adding Text';
+        }
+        </script>
+    </body>
+</html>
